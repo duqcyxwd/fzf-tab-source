@@ -1,6 +1,7 @@
 # :fzf-tab:complete:(\\|)zinit-*
+FOLDER=${word//\//---}
 case $group in
 plugins)
-  less ~/.local/share/zinit/plugins/$word/README*
+  mdcat ${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/plugins/$FOLDER/README*
   ;;
 esac
